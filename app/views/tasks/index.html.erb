@@ -6,18 +6,22 @@
   <% if task.completed %>
     <li class="list-group-item w-25">
       <i class="far fa-check-square"></i> <%= link_to "#{task.title}", task_path(task.id)%>
+      <button>
       <%= link_to "Delete",
             task_path(task.id),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+      </button>
     </li>
   <%else%>
     <li class="list-group-item w-25">
       <i class="far fa-square"></i> <%= link_to "#{task.title}", task_path(task.id)%>
+      <button>
       <%= link_to "Delete",
             task_path(task.id),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+      </button>
     </li>
   <%end%>
 <% end %>
